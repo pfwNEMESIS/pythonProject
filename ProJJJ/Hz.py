@@ -2,7 +2,7 @@ def minus(a,b):
     return a-b
 
 def nul(a,b):
-    return a*b
+    return 2+a*b
 
 def plus (a,b):
     return a+b

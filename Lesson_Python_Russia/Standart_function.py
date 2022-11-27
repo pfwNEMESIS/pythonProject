@@ -21,4 +21,4 @@ if __name__ == '__main__':
     ints = [int(e) for e in iter(input, '')]
     print(ints)
 
-# убрали +
+# убрали ++

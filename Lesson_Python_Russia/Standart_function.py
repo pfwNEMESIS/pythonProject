@@ -20,5 +20,3 @@ if __name__ == '__main__':
     #     print(line.upper())
     ints = [int(e) for e in iter(input, '')]
     print(ints)
-
-#-2

@@ -2,17 +2,19 @@ import pprint
 
 # List comprehension = listcomps
 # Generator expression = genexp
-# читается слева направо.
+
+# Читается слева направо.
 # [ВЫРАЖЕНИЕ/ПРЕОБРАЗОВЫВАНИЕ for element in ИСТОЧНИК if УСЛОВИЕ]
 # Нельзя делать больше 2х for в одной строке[].
-# Для соваря обязательно указать КЛЮЧ:ЗНАЧЕНИЕ (двоеточие)
+# Для словаря обязательно указать КЛЮЧ:ЗНАЧЕНИЕ (двоеточие)
 # Genexp. Генератор не формирует структуру данных,
 # как это делают ...comps, он формирует ОБЪЕКТ генератора.
 # Генератор вернёт объект, а не коллекцию
-# Генератор ленивый, не выполяется и не занимает память, пока не потребуется.
+# Генератор ленивый, не выполняется и не занимает память, пока не потребуется.
 # Генератор проверяет источник при создании!!!
 # Генератор одноразовый, если исчерпан, то бросает StopIteration.
-# цикл for перехватывает StopIteration.
+# Цикл for перехватывает StopIteration.
+# Используйте genexp вместо comps, кроме случаев, когда len или индексы (3, 5, 6 элемент и тд.)
 
 from time import sleep
 
@@ -37,7 +39,7 @@ letters = [letter for word in text.split() for letter in word if letter > 'l']
 # Setcomps, создаёт 'множества'.
 unique_letters = {letter for word in text.split() for letter in word if letter < 'o'}
 
-# Dcitcomps. Словарь.
+# Dictcomps. Словарь.
 alphabet = {index: letter for index, letter in enumerate('absdifghijklnopqrstuvwxyz', 1)}
 
 # Genexp. Генератор не формирует структуру данных, как это делают ...comps
@@ -49,14 +51,16 @@ def some_sourse():
     # open db
     # read file
     # calculate
-    print("!!!")
-    sleep(3)
-    return [1, 2, 3]
+    return 1, 2, 3
 
+def some_filter(x):
+    sleep(1)
+    return True
+
+def some_mapping(x):
+    sleep(1)
+    return x
 
 if __name__ == '__main__':
-    for e in positives_gen:
-        print(e)
-    print("===============")
-    for e in positives_gen:
-        print(e)
+    it = (some_mapping(e) for e in some_sourse() if some_filter(e))
+    print(next(it))

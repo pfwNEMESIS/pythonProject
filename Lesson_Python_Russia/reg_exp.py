@@ -22,4 +22,5 @@ results = re.sub(r'\bEUR\b', 'USD', info)
 words = re.split(r'\W+', text_2)
 # \W - word(слово) получили из текста только слова, без знаков препинаний.
 
+
 print(words)

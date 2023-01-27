@@ -54,3 +54,4 @@ if __name__ == '__main__':
     with ResourceWorker(1, 2, 3) as res:
         res.action()
         raise ValueError("Stop")
+#

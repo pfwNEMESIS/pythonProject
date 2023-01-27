@@ -23,3 +23,4 @@ if __name__ == '__main__':
         print(exc)
     finally:
         print('Finish')
+# Проверка
